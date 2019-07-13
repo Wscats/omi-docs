@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="../favicon.ico">
+    
+
+    <title>
+        
+          Omil
+        
+    </title>
+
+    <!-- Spectre.css framework (v0.5.8) -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+
+    <!-- theme css & js -->
+    <link rel="stylesheet" href="../css/spectre_custom.css">
+    <link rel="stylesheet" href="../css/book.css">
+    <script src="../js/book.js"></script>
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="book-container">
+    <div class="columns">
+      <div class="column col-2 hide-lg">
+        <div class="book-sidebar">
+  <h4 class="site-meta">
+    <a href="../">Omil</a>
+  </h4>
+  <div class="sidebar-content">
+    <!-- * [介绍](/)
+* [安装](/install)
+* [配合Omi Snippets插件](/plugin)
+* [配合React开发](/react)
+* [语言块规范](/spec)
+* [JSX](/jsx)
+* [Props](/props)
+* [事件处理](/event)
+* [生命周期](/lifecycle)
+* [Update](/update)
+* [Ref](/ref)
+* [Store](/store)
+* [CSS](/css)
+* [高阶组件](/hoc) -->
+
+
+<ul>
+<li><a href="https://wscats.github.io/omi-docs/public/home" target="_blank" rel="noopener">介绍</a></li>
+<li><a href="../install">安装</a></li>
+<li><a href="../plugin">配合Omi Snippets插件</a></li>
+<li><a href="../react">配合React开发</a></li>
+<li><a href="../spec">语言块规范</a></li>
+<li><a href="../jsx">JSX</a></li>
+<li><a href="../props">Props</a></li>
+<li><a href="../event">事件处理</a></li>
+<li><a href="../lifecycle">生命周期</a></li>
+<li><a href="../update">Update</a></li>
+<li><a href="../ref">Ref</a></li>
+<li><a href="../store">Store</a></li>
+<li><a href="../css">CSS</a></li>
+<li><a href="../hoc">高阶组件</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script src="../js/book-sidebar.js"></script>
+      </div>
+
+      <div class="column col-8 col-lg-12">
+        <div class="book-content">
+          <div class="book-navbar">
+  <header class="navbar">
+  <section class="navbar-section">
+    <img class="navbar-icon" src="../favicon.ico">
+  </section>
+  <section class="navbar-center">
+    Omil
+  </section>
+  <section class="navbar-section">
+    <label class="accordion-header c-hand" for="accordion-sidebar">
+      <i class="icon icon-menu"></i>
+    </label>
+  </section>
+</header>
+
+<div class="accordion">
+  <input type="checkbox" id="accordion-sidebar" name="accordion-checkbox" hidden>
+  <div class="accordion-body">
+    <!-- * [介绍](/)
+* [安装](/install)
+* [配合Omi Snippets插件](/plugin)
+* [配合React开发](/react)
+* [语言块规范](/spec)
+* [JSX](/jsx)
+* [Props](/props)
+* [事件处理](/event)
+* [生命周期](/lifecycle)
+* [Update](/update)
+* [Ref](/ref)
+* [Store](/store)
+* [CSS](/css)
+* [高阶组件](/hoc) -->
+
+
+<ul>
+<li><a href="https://wscats.github.io/omi-docs/public/home" target="_blank" rel="noopener">介绍</a></li>
+<li><a href="../install">安装</a></li>
+<li><a href="../plugin">配合Omi Snippets插件</a></li>
+<li><a href="../react">配合React开发</a></li>
+<li><a href="../spec">语言块规范</a></li>
+<li><a href="../jsx">JSX</a></li>
+<li><a href="../props">Props</a></li>
+<li><a href="../event">事件处理</a></li>
+<li><a href="../lifecycle">生命周期</a></li>
+<li><a href="../update">Update</a></li>
+<li><a href="../ref">Ref</a></li>
+<li><a href="../store">Store</a></li>
+<li><a href="../css">CSS</a></li>
+<li><a href="../hoc">高阶组件</a></li>
+</ul>
+
+  </div>
+</div>
+</div>
+
+<div class="book-post">
+  <h1 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h1><p>Omi 有内置的两个 class 方法 <code>classNames</code> 和 <code>extractClass</code>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"component-name"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> &#123;<span class="attr">...this.cls</span>&#125;&gt;</span></span><br><span class="line">        Test</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> &#123; classNames, extractClass &#125; <span class="keyword">from</span> <span class="string">'omi'</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//extractClass 会取出 props 的  class 或 className 属性并与其他 classNames 合并在一起</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        cls = extractClass(<span class="keyword">this</span>.props, <span class="string">'o-my-class'</span>, &#123;</span></span><br><span class="line"><span class="javascript">            <span class="string">'other-class'</span>: <span class="literal">true</span>,</span></span><br><span class="line"><span class="javascript">            <span class="string">'other-class-b'</span>: <span class="keyword">this</span>.xxx === <span class="number">1</span></span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的 classNames 和 npm 上的 classNames 是一样的。</p>
+
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+  </div>
+
+
+<script src="../js/book-post.js"></script>
+        </div>
+      </div>
+
+      <div class="column col-2 hide-lg">
+        <div class="book-toc">
+  <div class="book-tocbot">
+  </div>
+  <div class="book-tocbot-menu">
+    <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+    <a onclick="go_top()">Back to top</a>
+    <a onclick="go_bottom()">Go to bottom</a>
+  </div>
+</div>
+
+<script>
+tocbot.init({
+  tocSelector: '.book-tocbot',
+  contentSelector: '.book-post',
+  headingSelector: 'h1, h2, h3, h4, h5',
+  collapseDepth: 2,
+  orderedList: false,
+  scrollSmooth: false,
+});
+
+function expand_toc(){
+  var b = document.querySelector(".book-toc-expand");
+  tocbot.init({
+    tocSelector: '.book-tocbot',
+    contentSelector: '.book-post',
+    headingSelector: 'h1, h2, h3, h4, h5',
+    collapseDepth: 6,
+    orderedList: false,
+    scrollSmooth: false,
+  });
+  b.setAttribute("onclick", "collapse_toc()");
+  b.innerHTML = "Collapse all"
+}
+
+function collapse_toc(){
+  var b = document.querySelector(".book-toc-expand");
+  tocbot.init({
+    tocSelector: '.book-tocbot',
+    contentSelector: '.book-post',
+    headingSelector: 'h1, h2, h3, h4, h5',
+    collapseDepth: 2,
+    orderedList: false,
+    scrollSmooth: false,
+  });
+  b.setAttribute("onclick", "expand_toc()");
+  b.innerHTML = "Expand all"
+}
+
+function go_top() {
+  window.scrollTo(0, 0);
+}
+
+function go_bottom() {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+</script>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
