@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="../favicon.ico">
+    
+
+    <title>
+        
+          Omil
+        
+    </title>
+
+    <!-- Spectre.css framework (v0.5.8) -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+
+    <!-- theme css & js -->
+    <link rel="stylesheet" href="../css/spectre_custom.css">
+    <link rel="stylesheet" href="../css/book.css">
+    <script src="../js/book.js"></script>
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="book-container">
+    <div class="columns">
+      <div class="column col-2 hide-lg">
+        <div class="book-sidebar">
+  <h4 class="site-meta">
+    <a href="../">Omil</a>
+  </h4>
+  <div class="sidebar-content">
+    <ul>
+<li><a href="/">介绍</a></li>
+<li><a href="/install">安装</a></li>
+<li><a href="/plugin">配合Omi Snippets插件</a></li>
+<li><a href="/react">配合React开发</a></li>
+<li><a href="/spec">语言块规范</a></li>
+<li><a href="/jsx">JSX</a></li>
+<li><a href="/props">Props</a></li>
+<li><a href="/event">事件处理</a></li>
+<li><a href="/lifecycle">生命周期</a></li>
+<li><a href="/update">Update</a></li>
+<li><a href="/ref">Ref</a></li>
+<li><a href="/store">Store</a></li>
+<li><a href="/css">CSS</a></li>
+<li><a href="/hoc">高阶组件</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script src="../js/book-sidebar.js"></script>
+      </div>
+
+      <div class="column col-8 col-lg-12">
+        <div class="book-content">
+          <div class="book-navbar">
+  <header class="navbar">
+  <section class="navbar-section">
+    <img class="navbar-icon" src="../favicon.ico">
+  </section>
+  <section class="navbar-center">
+    Omil
+  </section>
+  <section class="navbar-section">
+    <label class="accordion-header c-hand" for="accordion-sidebar">
+      <i class="icon icon-menu"></i>
+    </label>
+  </section>
+</header>
+
+<div class="accordion">
+  <input type="checkbox" id="accordion-sidebar" name="accordion-checkbox" hidden>
+  <div class="accordion-body">
+    <ul>
+<li><a href="/">介绍</a></li>
+<li><a href="/install">安装</a></li>
+<li><a href="/plugin">配合Omi Snippets插件</a></li>
+<li><a href="/react">配合React开发</a></li>
+<li><a href="/spec">语言块规范</a></li>
+<li><a href="/jsx">JSX</a></li>
+<li><a href="/props">Props</a></li>
+<li><a href="/event">事件处理</a></li>
+<li><a href="/lifecycle">生命周期</a></li>
+<li><a href="/update">Update</a></li>
+<li><a href="/ref">Ref</a></li>
+<li><a href="/store">Store</a></li>
+<li><a href="/css">CSS</a></li>
+<li><a href="/hoc">高阶组件</a></li>
+</ul>
+
+  </div>
+</div>
+</div>
+
+<div class="book-post">
+  <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><p>这里说的是 props 的 css，而不是 static css，它提供了修改 shadow dom 内部 scoped style 的能力。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"component-name"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Look at my color!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">static</span> css = <span class="string">`h1&#123;</span></span></span><br><span class="line">            color: red;</span><br><span class="line">        &#125;`</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的 <code>my-element</code> 的 h1 标签颜色是红色。有什么办法修改吗？</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"component-name"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;this.onClick&#125;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">my-element</span> <span class="attr">css</span>=<span class="string">&#123;this.myCSS&#125;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</span></span><br><span class="line">        myCSS = `</span><br><span class="line">            h1&#123;</span><br><span class="line">                color: green;</span><br><span class="line">            &#125;</span><br><span class="line">        `</span><br><span class="line"><span class="javascript">        onClick = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="comment">//动态修改</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.myCSS = <span class="string">`</span></span></span><br><span class="line">                h1&#123;</span><br><span class="line">                    color: blue;</span><br><span class="line">                &#125;</span><br><span class="line">            `</span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.update()</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>而且还可以通过下面的方式保证一定能够修改：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">color</span>: <span class="selector-tag">blue</span>!<span class="selector-tag">important</span>;</span><br></pre></td></tr></table></figure>
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+  </div>
+
+
+<script src="../js/book-post.js"></script>
+        </div>
+      </div>
+
+      <div class="column col-2 hide-lg">
+        <div class="book-toc">
+  <div class="book-tocbot">
+  </div>
+  <div class="book-tocbot-menu">
+    <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+    <a onclick="go_top()">Back to top</a>
+    <a onclick="go_bottom()">Go to bottom</a>
+  </div>
+</div>
+
+<script>
+tocbot.init({
+  tocSelector: '.book-tocbot',
+  contentSelector: '.book-post',
+  headingSelector: 'h1, h2, h3, h4, h5',
+  collapseDepth: 2,
+  orderedList: false,
+  scrollSmooth: false,
+});
+
+function expand_toc(){
+  var b = document.querySelector(".book-toc-expand");
+  tocbot.init({
+    tocSelector: '.book-tocbot',
+    contentSelector: '.book-post',
+    headingSelector: 'h1, h2, h3, h4, h5',
+    collapseDepth: 6,
+    orderedList: false,
+    scrollSmooth: false,
+  });
+  b.setAttribute("onclick", "collapse_toc()");
+  b.innerHTML = "Collapse all"
+}
+
+function collapse_toc(){
+  var b = document.querySelector(".book-toc-expand");
+  tocbot.init({
+    tocSelector: '.book-tocbot',
+    contentSelector: '.book-post',
+    headingSelector: 'h1, h2, h3, h4, h5',
+    collapseDepth: 2,
+    orderedList: false,
+    scrollSmooth: false,
+  });
+  b.setAttribute("onclick", "expand_toc()");
+  b.innerHTML = "Expand all"
+}
+
+function go_top() {
+  window.scrollTo(0, 0);
+}
+
+function go_bottom() {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+</script>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

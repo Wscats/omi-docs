@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    
+      <link rel="icon" href="../favicon.ico">
+    
+
+    <title>
+        
+          Omil
+        
+    </title>
+
+    <!-- Spectre.css framework (v0.5.8) -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+    <!-- Noto Sans TC -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+
+    <!-- theme css & js -->
+    <link rel="stylesheet" href="../css/spectre_custom.css">
+    <link rel="stylesheet" href="../css/book.css">
+    <script src="../js/book.js"></script>
+
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+
+<body>
+
+<div class="container">
+  <div class="book-container">
+    <div class="columns">
+      <div class="column col-2 hide-lg">
+        <div class="book-sidebar">
+  <h4 class="site-meta">
+    <a href="../">Omil</a>
+  </h4>
+  <div class="sidebar-content">
+    <ul>
+<li><a href="/">介绍</a></li>
+<li><a href="/install">安装</a></li>
+<li><a href="/plugin">配合Omi Snippets插件</a></li>
+<li><a href="/react">配合React开发</a></li>
+<li><a href="/spec">语言块规范</a></li>
+<li><a href="/jsx">JSX</a></li>
+<li><a href="/props">Props</a></li>
+<li><a href="/event">事件处理</a></li>
+<li><a href="/lifecycle">生命周期</a></li>
+<li><a href="/update">Update</a></li>
+<li><a href="/ref">Ref</a></li>
+<li><a href="/store">Store</a></li>
+<li><a href="/css">CSS</a></li>
+<li><a href="/hoc">高阶组件</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script src="../js/book-sidebar.js"></script>
+      </div>
+
+      <div class="column col-8 col-lg-12">
+        <div class="book-content">
+          <div class="book-navbar">
+  <header class="navbar">
+  <section class="navbar-section">
+    <img class="navbar-icon" src="../favicon.ico">
+  </section>
+  <section class="navbar-center">
+    Omil
+  </section>
+  <section class="navbar-section">
+    <label class="accordion-header c-hand" for="accordion-sidebar">
+      <i class="icon icon-menu"></i>
+    </label>
+  </section>
+</header>
+
+<div class="accordion">
+  <input type="checkbox" id="accordion-sidebar" name="accordion-checkbox" hidden>
+  <div class="accordion-body">
+    <ul>
+<li><a href="/">介绍</a></li>
+<li><a href="/install">安装</a></li>
+<li><a href="/plugin">配合Omi Snippets插件</a></li>
+<li><a href="/react">配合React开发</a></li>
+<li><a href="/spec">语言块规范</a></li>
+<li><a href="/jsx">JSX</a></li>
+<li><a href="/props">Props</a></li>
+<li><a href="/event">事件处理</a></li>
+<li><a href="/lifecycle">生命周期</a></li>
+<li><a href="/update">Update</a></li>
+<li><a href="/ref">Ref</a></li>
+<li><a href="/store">Store</a></li>
+<li><a href="/css">CSS</a></li>
+<li><a href="/hoc">高阶组件</a></li>
+</ul>
+
+  </div>
+</div>
+</div>
+
+<div class="book-post">
+  <h1 id="配合-React-开发"><a href="#配合-React-开发" class="headerlink" title="配合 React 开发"></a>配合 React 开发</h1><p>安装 React 脚手架和一些必要模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm install create-react-app</span><br><span class="line"><span class="comment"># 初始化项目</span></span><br><span class="line">create-react-app my-project</span><br><span class="line"><span class="comment"># 进入项目文件夹目录</span></span><br><span class="line"><span class="built_in">cd</span> my-project</span><br><span class="line"><span class="comment"># 安装项目依赖</span></span><br><span class="line">npm install</span><br><span class="line"><span class="comment"># 安装 styled-components 这个务必得安装 用于处理 React 单文件组件局部样式</span></span><br><span class="line">npm install styled-components --save</span><br><span class="line"><span class="comment"># 安装 omil 处理React单文件组件，把 .omi 或者 .eno 后缀文件处理为 JS</span></span><br><span class="line">npm install omil --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>在配置完 Omil 之后，我们可以在 VS Code 上同时安装好 <a href="https://marketplace.visualstudio.com/items?itemName=Wscats.omi-snippets" target="_blank" rel="noopener">Omi Snippets</a> 扩展，这个插件可以方便的让你把 .omi 和 .eno 后缀文件在未经过 webpack 处理前转化为 .js 文件，让你可以直观了解到单文件组件经过 omil 转化后的 JS 文件内容，这相当于局部编译减轻 webpack 处理单文件时候的不必要消耗。</p>
+<h1 id="编写第一个组件"><a href="#编写第一个组件" class="headerlink" title="编写第一个组件"></a>编写第一个组件</h1><p>现在你可以使用单文件组件来编写 React 组件，默认生成类组件。</p>
+<ul>
+<li>name属性值是组件名要满足 React 框架的组件名字定义规范，首字母必须大写字母;</li>
+<li><code>&lt;template&gt;</code>模板中不能有<code>&lt;script&gt;</code>和<code>&lt;style&gt;</code>代码片段。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"Component-name"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;this.state.title&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">constructor</span>(props) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">super</span>(props)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.state = &#123;</span></span><br><span class="line"><span class="javascript">            title: <span class="string">"react"</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'生命周期'</span>)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">p</span> &#123;<span class="attribute">color</span>: <span class="number">#58bc58</span>&#125;;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以上文件经过 Omil 处理后将会转化为以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component <span class="keyword">as</span> WeElement, createElement <span class="keyword">as</span> h &#125; <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">"styled-components"</span>;</span><br><span class="line"><span class="keyword">const</span> StyledComponents = styled.div<span class="string">`</span></span><br><span class="line"><span class="string">  /* CSS */</span></span><br><span class="line"><span class="string">  p &#123;</span></span><br><span class="line"><span class="string">    color: #58bc58;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComponentName</span> <span class="keyword">extends</span> <span class="title">WeElement</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> h(</span><br><span class="line">      StyledComponents,</span><br><span class="line">      <span class="literal">null</span>,</span><br><span class="line">      h(<span class="string">"div"</span>, <span class="literal">null</span>, h(<span class="string">"p"</span>, <span class="literal">null</span>, <span class="keyword">this</span>.state.title))</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">      title: <span class="string">"react"</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"生命周期"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ComponentName.css = <span class="string">`</span></span><br><span class="line"><span class="string">/* CSS */</span></span><br><span class="line"><span class="string">p &#123;color: #58bc58&#125;;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> ComponentName;</span><br></pre></td></tr></table></figure>
+</div>
+
+
+  <div class="book-comments">
+    
+
+
+  </div>
+
+
+<script src="../js/book-post.js"></script>
+        </div>
+      </div>
+
+      <div class="column col-2 hide-lg">
+        <div class="book-toc">
+  <div class="book-tocbot">
+  </div>
+  <div class="book-tocbot-menu">
+    <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+    <a onclick="go_top()">Back to top</a>
+    <a onclick="go_bottom()">Go to bottom</a>
+  </div>
+</div>
+
+<script>
+tocbot.init({
+  tocSelector: '.book-tocbot',
+  contentSelector: '.book-post',
+  headingSelector: 'h1, h2, h3, h4, h5',
+  collapseDepth: 2,
+  orderedList: false,
+  scrollSmooth: false,
+});
+
+function expand_toc(){
+  var b = document.querySelector(".book-toc-expand");
+  tocbot.init({
+    tocSelector: '.book-tocbot',
+    contentSelector: '.book-post',
+    headingSelector: 'h1, h2, h3, h4, h5',
+    collapseDepth: 6,
+    orderedList: false,
+    scrollSmooth: false,
+  });
+  b.setAttribute("onclick", "collapse_toc()");
+  b.innerHTML = "Collapse all"
+}
+
+function collapse_toc(){
+  var b = document.querySelector(".book-toc-expand");
+  tocbot.init({
+    tocSelector: '.book-tocbot',
+    contentSelector: '.book-post',
+    headingSelector: 'h1, h2, h3, h4, h5',
+    collapseDepth: 2,
+    orderedList: false,
+    scrollSmooth: false,
+  });
+  b.setAttribute("onclick", "expand_toc()");
+  b.innerHTML = "Expand all"
+}
+
+function go_top() {
+  window.scrollTo(0, 0);
+}
+
+function go_bottom() {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+</script>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
