@@ -1,0 +1,57 @@
+<div class='book-archive'>
+  <!-- Title -->
+  <% if(is_archive()){ %>
+    <h2>Archives</h2>
+  <% } else if(is_category()) { %>
+    <h2>Categories</h2>
+  <% } else if(is_tag()) { %>
+    <h2>Tags</h2>
+  <% } %>
+
+  <% if(is_current('archives')) { %>
+    <!-- Split post by year -->
+    <%
+        var years = {};
+        site.posts.sort('date').reverse().forEach(function(post){
+            var year = post.date.year()
+            if(years[year]===undefined){
+                years[year] = [];
+            }
+            years[year].push(post);
+        });
+    %>
+  <% } else { %>
+    <!-- Split post by year -->
+    <%
+        var years = {};
+        page.posts.sort('date').reverse().forEach(function(post){
+            var year = post.date.year()
+            if(years[year]===undefined){
+                years[year] = [];
+            }
+            years[year].push(post);
+        });
+    %>
+  <% } %>
+
+  <% Object.keys(years).reverse().forEach(function(year){  %>
+      <div class="book-archive-years">
+          <ul class="archive-list-item">
+          <% years[year].map(function(post){  %>
+              <li>
+                <span><%= post.date.format('YYYY-MM-DD') %></span>
+                <a href="<%- config.root %><%- post.path %>">
+                  <%- post.title || "Untitled" %>
+                </a>
+              </li>
+          <% }) %>
+          </ul>
+      </div>
+  <% }) %>
+
+  <% if(!is_current('archives') && page.total > 1) {%>
+    <nav class="pager">
+        <%- paginator() %>
+    </nav>
+  <% } %>
+</div>

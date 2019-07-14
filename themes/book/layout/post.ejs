@@ -1,0 +1,15 @@
+<div class="book-navbar">
+  <%- partial('_partials/navbar') %>
+</div>
+
+<div class="book-post">
+  <%-page.content%>
+</div>
+
+<% if(page.comments != false) { %>
+  <div class="book-comments">
+    <%- partial('_partials/comments') %>
+  </div>
+<% } %>
+
+<%- js('/js/book-post') %>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+
+<%- partial('_partials/head') %>
+
+<body>
+
+<div class="container">
+  <div class="book-container">
+    <div class="columns">
+      <div class="column col-2 hide-lg">
+        <%- partial('_partials/sidebar') %>
+      </div>
+
+      <div class="column col-8 col-lg-12">
+        <div class="book-content">
+          <%- body %>
+        </div>
+      </div>
+
+      <div class="column col-2 hide-lg">
+        <%- partial('_partials/toc') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
