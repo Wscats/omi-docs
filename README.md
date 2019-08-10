@@ -17,5 +17,5 @@
 
 # 案例演示
 
-- [商品列表页](https://wscats.github.io/omi-docs/demos/ProductList/ProductList.html)
+- [商品列表页](https://wscats.github.io/omi-docs/demos/ProductList/index.html)
 - [飞鸟动画]()
