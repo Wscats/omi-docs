@@ -1,3 +1,5 @@
+'use strict';
+
  /*!
  * Buttons helper for fancyBox
  * version: 1.0.5 (Mon, 15 Oct 2012)
@@ -15,7 +17,7 @@
  */
 ;(function ($) {
 	//Shortcut for fancyBox object
-	var F = $.fancybox;
+	const F = $.fancybox;
 
 	//Add helper object
 	F.helpers.buttons = {
@@ -55,7 +57,7 @@
 		},
 
 		afterShow: function (opts, obj) {
-			var buttons = this.buttons;
+			let buttons = this.buttons;
 
 			if (!buttons) {
 				this.list = $(opts.tpl).addClass(opts.position).appendTo('body');

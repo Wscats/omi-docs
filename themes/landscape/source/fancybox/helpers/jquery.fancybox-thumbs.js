@@ -1,3 +1,5 @@
+'use strict';
+
  /*!
  * Thumbnail helper for fancyBox
  * version: 1.0.7 (Mon, 01 Oct 2012)
@@ -16,7 +18,7 @@
  */
 ;(function ($) {
 	//Shortcut for fancyBox object
-	var F = $.fancybox;
+	const F = $.fancybox;
 
 	//Add helper object
 	F.helpers.thumbs = {
@@ -44,7 +46,7 @@
 		width : 0,
 
 		init: function (opts, obj) {
-			var that = this,
+			const that = this,
 				list,
 				thumbWidth  = opts.width,
 				thumbHeight = opts.height,
@@ -53,7 +55,7 @@
 			//Build list structure
 			list = '';
 
-			for (var n = 0; n < obj.group.length; n++) {
+			for (let n = 0; n < obj.group.length; n++) {
 				list += '<li><a style="width:' + thumbWidth + 'px;height:' + thumbHeight + 'px;" href="javascript:jQuery.fancybox.jumpto(' + n + ');"></a></li>';
 			}
 
@@ -62,7 +64,7 @@
 
 			//Load each thumbnail
 			$.each(obj.group, function (i) {
-				var el   = obj.group[ i ],
+				const el   = obj.group[ i ],
 					href = thumbSource( el );
 
 				if (!href) {
@@ -70,7 +72,7 @@
 				}
 
 				$("<img />").load(function () {
-					var width  = this.width,
+					let width  = this.width,
 						height = this.height,
 						widthRatio, heightRatio, parent;
 

@@ -66,7 +66,7 @@
 	"use strict";
 
 	//Shortcut for fancyBox object
-	var F = $.fancybox,
+	const F = $.fancybox,
 		format = function( url, rez, params ) {
 			params = params || '';
 
@@ -164,7 +164,7 @@
 		},
 
 		beforeLoad : function(opts, obj) {
-			var url   = obj.href || '',
+			let url   = obj.href || '',
 				type  = false,
 				what,
 				item,

@@ -1,14 +1,16 @@
+'use strict';
+
 (function($){
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,
     searchAnimDuration = 200;
 
-  var startSearchAnim = function(){
+  const startSearchAnim = function(){
     isSearchAnim = true;
   };
 
-  var stopSearchAnim = function(callback){
+  const stopSearchAnim = function(callback){
     setTimeout(function(){
       isSearchAnim = false;
       callback && callback();
@@ -44,14 +46,14 @@
       offset = $this.offset();
 
     if ($('#' + id).length){
-      var box = $('#' + id);
+      let box = $('#' + id);
 
       if (box.hasClass('on')){
         box.removeClass('on');
         return;
       }
     } else {
-      var html = [
+      const html = [
         '<div id="' + id + '" class="article-share-box">',
           '<input class="article-share-input" value="' + url + '">',
           '<div class="article-share-links">',
@@ -63,7 +65,7 @@
         '</div>'
       ].join('');
 
-      var box = $(html);
+      const box = $(html);
 
       $('body').append(box);
     }
@@ -90,7 +92,7 @@
     $(this).find('img').each(function(){
       if ($(this).parent().hasClass('fancybox')) return;
 
-      var alt = this.alt;
+      const alt = this.alt;
 
       if (alt) $(this).after('<span class="caption">' + alt + '</span>');
 
@@ -111,11 +113,11 @@
     isMobileNavAnim = false,
     mobileNavAnimDuration = 200;
 
-  var startMobileNavAnim = function(){
+  const startMobileNavAnim = function(){
     isMobileNavAnim = true;
   };
 
-  var stopMobileNavAnim = function(){
+  const stopMobileNavAnim = function(){
     setTimeout(function(){
       isMobileNavAnim = false;
     }, mobileNavAnimDuration);

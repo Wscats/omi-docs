@@ -13,7 +13,7 @@
 ;(function (window, document, $, undefined) {
 	"use strict";
 
-	var H = $("html"),
+	const H = $("html"),
 		W = $(window),
 		D = $(document),
 		F = $.fancybox = function () {
@@ -36,7 +36,7 @@
 			return (el && !(el.style.overflow && el.style.overflow === 'hidden') && ((el.clientWidth && el.scrollWidth > el.clientWidth) || (el.clientHeight && el.scrollHeight > el.clientHeight)));
 		},
 		getScalar = function(orig, dim) {
-			var value = parseInt(orig, 10) || 0;
+			let value = parseInt(orig, 10) || 0;
 
 			if (dim && isPercentage(orig)) {
 				value = F.getViewport()[ dim ] / 100 * value;
@@ -243,7 +243,7 @@
 
 			// Recheck if the type of each element is `object` and set content type (image, ajax, etc)
 			$.each(group, function(i, element) {
-				var obj = {},
+				let obj = {},
 					href,
 					title,
 					content,
@@ -361,7 +361,7 @@
 
 		// Cancel image loading or abort ajax request
 		cancel: function () {
-			var coming = F.coming;
+			let coming = F.coming;
 
 			if (coming && false === F.trigger('onCancel')) {
 				return;
@@ -431,7 +431,7 @@
 		//   $.fancybox.play( true ); - start
 		//   $.fancybox.play( false ); - stop
 		play: function ( action ) {
-			var clear = function () {
+			const clear = function () {
 					clearTimeout(F.player.timer);
 				},
 				set = function () {
@@ -475,7 +475,7 @@
 
 		// Navigate to next gallery item
 		next: function ( direction ) {
-			var current = F.current;
+			let current = F.current;
 
 			if (current) {
 				if (!isString(direction)) {
@@ -488,7 +488,7 @@
 
 		// Navigate to previous gallery item
 		prev: function ( direction ) {
-			var current = F.current;
+			let current = F.current;
 
 			if (current) {
 				if (!isString(direction)) {
@@ -501,7 +501,7 @@
 
 		// Navigate to gallery item by index
 		jumpto: function ( index, direction, router ) {
-			var current = F.current;
+			let current = F.current;
 
 			if (!current) {
 				return;
@@ -529,7 +529,7 @@
 
 		// Center inside viewport and toggle position type to fixed or absolute if needed
 		reposition: function (e, onlyAbsolute) {
-			var current = F.current,
+			let current = F.current,
 				wrap    = current ? current.wrap : null,
 				pos;
 
@@ -550,7 +550,7 @@
 		},
 
 		update: function (e) {
-			var type = (e && e.originalEvent && e.originalEvent.type),
+			let type = (e && e.originalEvent && e.originalEvent.type),
 				anyway = !type || type === 'orientationchange';
 
 			if (anyway) {
@@ -564,7 +564,7 @@
 			}
 
 			didUpdate = setTimeout(function() {
-				var current = F.current;
+				let current = F.current;
 
 				if (!current || F.isClosing) {
 					return;
@@ -639,7 +639,7 @@
 		},
 
 		getViewport: function () {
-			var locked = (F.current && F.current.locked) || false,
+			let locked = (F.current && F.current.locked) || false,
 				rez    = {
 					x: W.scrollLeft(),
 					y: W.scrollTop()
@@ -669,7 +669,7 @@
 		},
 
 		bindEvents: function () {
-			var current = F.current,
+			let current = F.current,
 				keys;
 
 			if (!current) {
@@ -684,7 +684,7 @@
 
 			if (keys) {
 				D.bind('keydown.fb', function (e) {
-					var code   = e.which || e.keyCode,
+					const code   = e.which || e.keyCode,
 						target = e.target || e.srcElement;
 
 					// Skip esc key if loading, because showLoading will cancel preloading
@@ -715,7 +715,7 @@
 
 			if ($.fn.mousewheel && current.mouseWheel) {
 				F.wrap.bind('mousewheel.fb', function (e, delta, deltaX, deltaY) {
-					var target = e.target || null,
+					let target = e.target || null,
 						parent = $(target),
 						canScroll = false;
 
@@ -777,7 +777,7 @@
 		},
 
 		_start: function (index) {
-			var coming = {},
+			let coming = {},
 				obj,
 				href,
 				type,
@@ -941,7 +941,7 @@
 
 		_loadImage: function () {
 			// Reset preload image so it is later possible to check "complete" property
-			var img = F.imgPreload = new Image();
+			const img = F.imgPreload = new Image();
 
 			img.onload = function () {
 				this.onload = this.onerror = null;
@@ -966,7 +966,7 @@
 		},
 
 		_loadAjax: function () {
-			var coming = F.coming;
+			let coming = F.coming;
 
 			F.showLoading();
 
@@ -991,7 +991,7 @@
 		},
 
 		_loadIframe: function() {
-			var coming = F.coming,
+			let coming = F.coming,
 				iframe = $(coming.tpl.iframe.replace(/\{rnd\}/g, new Date().getTime()))
 					.attr('scrolling', isTouch ? 'auto' : coming.iframe.scrolling)
 					.attr('src', coming.href);
@@ -1031,7 +1031,7 @@
 		},
 
 		_preloadImages: function() {
-			var group   = F.group,
+			const group   = F.group,
 				current = F.current,
 				len     = group.length,
 				cnt     = current.preload ? Math.min(current.preload, len - 1) : 0,
@@ -1048,7 +1048,7 @@
 		},
 
 		_afterLoad: function () {
-			var coming   = F.coming,
+			let coming   = F.coming,
 				previous = F.current,
 				placeholder = 'fancybox-placeholder',
 				current,
@@ -1170,7 +1170,7 @@
 		},
 
 		_setDimension: function () {
-			var viewport   = F.getViewport(),
+			let viewport   = F.getViewport(),
 				steps      = 0,
 				canShrink  = false,
 				canExpand  = false,
@@ -1396,7 +1396,7 @@
 		},
 
 		_getPosition: function (onlyAbsolute) {
-			var current  = F.current,
+			let current  = F.current,
 				viewport = F.getViewport(),
 				margin   = current.margin,
 				width    = F.wrap.width()  + margin[1] + margin[3],
@@ -1422,7 +1422,7 @@
 		},
 
 		_afterZoomIn: function () {
-			var current = F.current;
+			let current = F.current;
 
 			if (!current) {
 				return;
@@ -1509,7 +1509,7 @@
 
 	F.transitions = {
 		getOrigPosition: function () {
-			var current  = F.current,
+			let current  = F.current,
 				element  = current.element,
 				orig     = current.orig,
 				pos      = {},
@@ -1580,7 +1580,7 @@
 		},
 
 		zoomIn: function () {
-			var current  = F.current,
+			let current  = F.current,
 				startPos = current.pos,
 				effect   = current.openEffect,
 				elastic  = effect === 'elastic',
@@ -1609,7 +1609,7 @@
 		},
 
 		zoomOut: function () {
-			var current  = F.current,
+			let current  = F.current,
 				effect   = current.closeEffect,
 				elastic  = effect === 'elastic',
 				endPos   = {opacity : 0.1};
@@ -1631,7 +1631,7 @@
 		},
 
 		changeIn: function () {
-			var current   = F.current,
+			let current   = F.current,
 				effect    = current.nextEffect,
 				startPos  = current.pos,
 				endPos    = { opacity : 1 },
@@ -1668,7 +1668,7 @@
 		},
 
 		changeOut: function () {
-			var previous  = F.previous,
+			const previous  = F.previous,
 				effect    = previous.prevEffect,
 				endPos    = { opacity : 0.1 },
 				direction = F.direction,
@@ -1729,7 +1729,7 @@
 		},
 
 		open : function(opts) {
-			var that = this;
+			let that = this;
 
 			opts = $.extend({}, this.defaults, opts);
 
@@ -1785,7 +1785,7 @@
 		// Private, callbacks
 
 		update : function () {
-			var width = '100%', offsetWidth;
+			let width = '100%', offsetWidth;
 
 			// Reset width/height so it will not mess
 			this.overlay.width(width).height('100%');
@@ -1807,7 +1807,7 @@
 
 		// This is where we can manipulate DOM, because later it would cause iframes to reload
 		onReady : function (opts, obj) {
-			var overlay = this.overlay;
+			const overlay = this.overlay;
 
 			$('.fancybox-overlay').stop(true, true);
 
@@ -1872,7 +1872,7 @@
 		},
 
 		beforeShow: function (opts) {
-			var current = F.current,
+			const current = F.current,
 				text    = current.title,
 				type    = opts.type,
 				title,
@@ -1927,7 +1927,7 @@
 			that     = $(this),
 			selector = this.selector || '',
 			run      = function(e) {
-				var what = $(this).blur(), idx = index, relType, relVal;
+				let what = $(this).blur(), idx = index, relType, relVal;
 
 				if (!(e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) && !what.is('.fancybox-wrap')) {
 					relType = options.groupAttr || 'data-fancybox-group';
@@ -1975,7 +1975,7 @@
 		if ( $.scrollbarWidth === undefined ) {
 			// http://benalman.com/projects/jquery-misc-plugins/#scrollbarwidth
 			$.scrollbarWidth = function() {
-				var parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body'),
+				const parent = $('<div style="width:50px;height:50px;overflow:auto"><div/></div>').appendTo('body'),
 					child  = parent.children(),
 					width  = child.innerWidth() - child.height( 99 ).innerWidth();
 
@@ -1987,7 +1987,7 @@
 
 		if ( $.support.fixedPosition === undefined ) {
 			$.support.fixedPosition = (function() {
-				var elem  = $('<div style="position:fixed;top:20px;"></div>').appendTo('body'),
+				const elem  = $('<div style="position:fixed;top:20px;"></div>').appendTo('body'),
 					fixed = ( elem[0].offsetTop === 20 || elem[0].offsetTop === 15 );
 
 				elem.remove();

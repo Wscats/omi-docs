@@ -2,13 +2,13 @@
 
 'use strict';
 
-var ejs = require('ejs');
+const ejs = require('ejs');
 
 var menufile;
 
 hexo.on('generateAfter', function () {
-  var menu = hexo.theme.config.menu_page;
-  var posts = hexo.locals.get('posts')
+  const menu = hexo.theme.config.menu_page;
+  const posts = hexo.locals.get('posts')
   posts.forEach(function(post){
     if(post.source === "_posts/" + menu) {
       menufile = post;
